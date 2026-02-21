@@ -20,3 +20,8 @@ app.post("/", (req, res) => {
   users.push(user);
   res.json(users);
 });
+app.delete("/:id", (req, res) => {
+  const id = Number(req.params.id);
+  users= users.filter((user) => user.id !== id);
+  res.json(users);
+});
